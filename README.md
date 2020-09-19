@@ -94,7 +94,7 @@ Repeat steps 3 – 5 until we generate <end> token or hit the maximum length of 
   
 ## Model :
 
-So, basically here I have used three stackes bidirectional LSTM layers as encoder and a single unidirentional LSTM layer as my decoder.
+So, basically here I have used three stacked bidirectional LSTM layers as encoder and a single unidirentional LSTM layer as my decoder.
 
 
 Hope, this was quite informative . :)
