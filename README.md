@@ -28,7 +28,10 @@ Our objective is to build a text summarizer where the input is a long sequence o
 There are two major components of a Seq2Seq model:
 
 Encoder
+
 Decoder
+
+
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/05/final.jpg)
 
 ## Understanding the Encoder-Decoder Architecture
@@ -42,8 +45,9 @@ Generally, variants of Recurrent Neural Networks (RNNs), i.e. Gated Recurrent Ne
 
 We can set up the Encoder-Decoder in 2 phases:
 
-Training phase
-Inference phase
+firstly, Training phase
+
+secondly, Inference phase
 
 ## Training phase
 In the training phase, we will first set up the encoder and decoder. We will then train the model to predict the target sequence offset by one timestep. Let us see in detail on how to set up the encoder and decoder.
