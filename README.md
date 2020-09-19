@@ -35,6 +35,7 @@ Decoder
 The Encoder-Decoder architecture is mainly used to solve the sequence-to-sequence (Seq2Seq) problems where the input and output sequences are of different lengths.
 
 Let’s understand this from the perspective of text summarization. The input is a long sequence of words and the output will be a short version of the input sequence.
+
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/06/first.jpg.jpg)
 
 Generally, variants of Recurrent Neural Networks (RNNs), i.e. Gated Recurrent Neural Network (GRU) or Long Short Term Memory (LSTM), are preferred as the encoder and decoder components. This is because they are capable of capturing long term dependencies by overcoming the problem of vanishing gradient.
@@ -54,7 +55,9 @@ In the training phase, we will first set up the encoder and decoder. We will the
 An Encoder Long Short Term Memory model (LSTM) reads the entire input sequence wherein, at each timestep, one word is fed into the encoder. It then processes the information at every timestep and captures the contextual information present in the input sequence.
 
 I’ve put together the below diagram which illustrates this process:
+
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/05/61.jpg)
+
 The hidden state (hi) and cell state (ci) of the last time step are used to initialize the decoder. Remember, this is because the encoder and decoder are two different sets of the LSTM architecture.
 
  
@@ -62,11 +65,16 @@ The hidden state (hi) and cell state (ci) of the last time step are used to init
 ### Decoder
 
 The decoder is also an LSTM network which reads the entire target sequence word-by-word and predicts the same sequence offset by one timestep. The decoder is trained to predict the next word in the sequence given the previous word.
+
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/05/71.jpg)
+
+
 <start> and <end> are the special tokens which are added to the target sequence before feeding it into the decoder. The target sequence is unknown while decoding the test sequence. So, we start predicting the target sequence by passing the first word into the decoder which would be always the <start> token. And the <end> token signals the end of the sentence.
   
 ## Inference Phase
 After training, the model is tested on new source sequences for which the target sequence is unknown. So, we need to set up the inference architecture to decode a test sequence:
+
+
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/05/82.jpg)
 
 How does the inference process work?
